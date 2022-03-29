@@ -5,7 +5,7 @@ export default {
   input: 'src/index.js',
   // the output for the build folder described above
   output: {
-    file: 'dist/bundle.js',
+    file: 'public/javascripts/bundle.js',
     // Optional and for development only. This provides the ability to
     // map the built code back to the original source format when debugging.
     sourcemap: 'inline',
