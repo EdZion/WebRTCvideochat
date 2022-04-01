@@ -31,6 +31,7 @@ const servers = {
 const pc = new RTCPeerConnection(servers);
 let localStream = null;
 let remoteStream = null;
+let videotoggle = false;
 
 // HTML elements
 const webcamButton = document.getElementById('webcamButton');
@@ -40,11 +41,32 @@ const callInput = document.getElementById('callInput');
 const answerButton = document.getElementById('answerButton');
 const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
+const startwebcamButton = document.getElementById('startwebcamButton');
 
 // 1. Setup media sources
+startwebcamButton.onclick = async () => {
+ videotoggle = !videotoggle;
+ localStream = await navigator.mediaDevices.getUserMedia({ video: videotoggle, audio: true });
+ console.log(videotoggle);
+
+  // Push tracks from local stream to peer connection
+  localStream.getTracks().forEach((track) => {
+    pc.addTrack(track, localStream);
+  });
+
+  // Pull tracks from remote stream, add to video stream
+  pc.ontrack = (event) => {
+    event.streams[0].getTracks().forEach((track) => {
+      remoteStream.addTrack(track);
+    });
+  };
+
+  webcamVideo.srcObject = localStream;
+  remoteVideo.srcObject = remoteStream;
+}
 
 webcamButton.onclick = async () => {
-  localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  localStream = await navigator.mediaDevices.getUserMedia({ video: videotoggle, audio: true });
   remoteStream = new MediaStream();
 
   // Push tracks from local stream to peer connection
