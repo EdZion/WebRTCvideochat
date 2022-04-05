@@ -43,16 +43,24 @@ const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
 const startwebcamButton = document.getElementById('startwebcamButton');
 
-// 1. Setup media sources
+// Toggle Webcam.
 startwebcamButton.onclick = async () => {
  videotoggle = !videotoggle;
  localStream = await navigator.mediaDevices.getUserMedia({ video: videotoggle, audio: true });
+ remoteStream = new MediaStream();
  console.log(videotoggle);
 
   // Push tracks from local stream to peer connection
   localStream.getTracks().forEach((track) => {
     pc.addTrack(track, localStream);
   });
+
+  // Pull tracks from remote stream, add to video stream
+    pc.ontrack = (event) => {
+    event.streams[0].getTracks().forEach((track) => {
+      remoteStream.addTrack(track);
+    });
+  };
 
   // Pull tracks from remote stream, add to video stream
   pc.ontrack = (event) => {
@@ -65,6 +73,7 @@ startwebcamButton.onclick = async () => {
   remoteVideo.srcObject = remoteStream;
 }
 
+// 1. Setup media sources
 webcamButton.onclick = async () => {
   localStream = await navigator.mediaDevices.getUserMedia({ video: videotoggle, audio: true });
   remoteStream = new MediaStream();
@@ -171,4 +180,6 @@ answerButton.onclick = async () => {
       }
     });
   });
+  
+  hangupButton.disabled = false;
 };
