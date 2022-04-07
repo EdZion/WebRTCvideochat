@@ -31,7 +31,7 @@ const servers = {
 const pc = new RTCPeerConnection(servers);
 let localStream = null;
 let remoteStream = null;
-let videotoggle = false;
+let videotoggle = true;
 
 // HTML elements
 const webcamButton = document.getElementById('webcamButton');
@@ -75,6 +75,7 @@ startwebcamButton.onclick = async () => {
 
 // 1. Setup media sources
 webcamButton.onclick = async () => {
+  videotoggle = !videotoggle;
   localStream = await navigator.mediaDevices.getUserMedia({ video: videotoggle, audio: true });
   remoteStream = new MediaStream();
 
@@ -95,7 +96,6 @@ webcamButton.onclick = async () => {
 
   callButton.disabled = false;
   answerButton.disabled = false;
-  webcamButton.disabled = true;
 };
 
 // 2. Create an offer
@@ -141,8 +141,6 @@ callButton.onclick = async () => {
       }
     });
   });
-
-  hangupButton.disabled = false;
 };
 
 // 3. Answer the call with the unique ID
@@ -180,6 +178,8 @@ answerButton.onclick = async () => {
       }
     });
   });
-  
-  hangupButton.disabled = false;
 };
+
+hangupButton.onclick = async () =>{
+  pc.close();
+}
