@@ -1,8 +1,25 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #2E294E;
+  font-family: 'Poppins', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+main{
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1{
+  font-size: 3rem;
+  padding-bottom: 0.5rem;
+}
+
+h2{
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+h3{
+  font-size: 1.5rem;
 }
