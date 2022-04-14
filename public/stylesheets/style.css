@@ -5,9 +5,12 @@ body {
 }
 
 main{
+  display: flex;
   max-width: 80%;
   margin-right: auto;
   margin-left: auto;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1{
@@ -22,4 +25,28 @@ h2{
 
 h3{
   font-size: 1.5rem;
+}
+.btn{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: white; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  color: #2E294E; /* White text */
+  font-size: 2rem; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+.btn img{
+  width: 2rem;
+  padding-left: 0.2rem;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn::focus{
+  background-color: rgba(0, 0, 0, 0.25);
 }
