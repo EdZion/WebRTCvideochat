@@ -2,6 +2,7 @@ body {
   background-color: #FFFFFF;
   color: #2E294E;
   font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
 main{
@@ -13,14 +14,56 @@ main{
   align-items: center;
 }
 
+header{
+  margin-top: 7rem;
+  margin-bottom: 14rem;
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2E294E;
+}
+
+.inputbox{
+  border-style: none;
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  margin-right: 1rem;
+  text-align: center;
+  background-color: #F9AF9A;
+}
+
+.joincallfield{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2E294E;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #2E294E;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #2E294E;
+}
+
 h1{
-  font-size: 3rem;
-  padding-bottom: 0.5rem;
+  font-size: 5rem;
+  font-weight: bold;
 }
 
 h2{
   font-size: 2rem;
-  padding-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 h3{
@@ -38,6 +81,7 @@ h3{
   font-size: 2rem; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
 }
+
 .btn img{
   width: 2rem;
   padding-left: 0.2rem;
