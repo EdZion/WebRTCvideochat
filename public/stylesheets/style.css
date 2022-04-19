@@ -24,6 +24,7 @@ header{
   flex-direction: column;
   align-items: center;
   color: #2E294E;
+  margin-bottom: 30rem;
 }
 
 .inputbox{
