@@ -181,5 +181,7 @@ answerButton.onclick = async () => {
 };
 
 hangupButton.onclick = async () =>{
+  pc.removeStream(localStream);
+  pc.removeStream(remoteStream);
   pc.close();
 }
