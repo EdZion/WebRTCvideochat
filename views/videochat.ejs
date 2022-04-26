@@ -6,45 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
   <link rel="stylesheet" href="/stylesheets/reset.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/videochat.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>VideoChat</title>
+  <title>Videochat</title>
 </head>
 <body>
   <main>
-    <header>
-      <h1>Sportswik</h1>
-    </header>
-
-    <div class="hero">
-      <h2>Make a call or join a call</h2>
-      <div class="joincallfield">
-        <input id="callInput" class="inputbox" placeholder="Type call ID"/>
-        <button id="answerButton" class="btn"><img src="/images/Answear.svg" alt="Answear">Join call</button>
-      </div>
-      <button id="callButton" class="btn"><img src="/images/Plus.svg" alt="Answear">Create new call</button>
-    </div>
-
     <div class="videos">
-      <span>
-        <h3>Local Stream</h3>
-        <video id="webcamVideo" autoplay playsinline muted></video>
-      </span>
-      <span>
-        <h3>Remote Stream</h3>
-        <video id="remoteVideo" autoplay playsinline></video>
-      </span>
+        <video class="video" id="webcamVideo" autoplay playsinline muted></video>
+        <video class="video" id="remoteVideo" autoplay playsinline></video>
     </div>
-
-    <button id="webcamButton">Start sound</button>
-    <button id="startwebcamButton">Start webcam</button>
-
-
-    <button id="hangupButton">Hangup</button>
-
+    <div class="buttons">
+      <button id="" class="btn"><img src="/images/microphone.svg" alt="microphone"></button>
+      <button id="" class="btn"><img src="/images/Speaker.svg" alt="bell"></button>
+      <button id="" class="btn"><img src="/images/camdisabled.svg" alt="camdisabled"></button>
+      <button id="hangupButton" class="btn"><img src="/images/Hangup.svg" alt="Hangup"></button>
+      <button id="" class="btn"><img src="/images/Arrowup.svg" alt="arrowup"></button>
+    </div>
   </main>
-  <script type="module" src="/javascripts/bundle.js"></script>
 </body>
 </html>

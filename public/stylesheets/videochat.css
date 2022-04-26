@@ -1,0 +1,66 @@
+html{
+  height: 100%;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #2E294E;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  min-height: 100%;
+}
+
+.videos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33vw, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(10vh, 1fr));
+  height: 100vh;
+}
+
+.video{
+  outline: 1px solid #2E294E;
+  background-color: #DFDFDF;
+  width: 100%;
+  height: 100%;
+}
+
+.btn{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: white; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  color: #2E294E; /* White text */
+  font-size: 2rem; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.buttons{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 8px;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  right: 0;
+  margin: auto;
+  justify-content: space-around;
+  outline: 1px solid #2E294E;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.btn img{
+  width: 2rem;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn::focus{
+  background-color: rgba(0, 0, 0, 0.25);
+}
