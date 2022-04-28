@@ -62,12 +62,6 @@ startwebcamButton.onclick = async () => {
     });
   };
 
-  // Pull tracks from remote stream, add to video stream
-  pc.ontrack = (event) => {
-    event.streams[0].getTracks().forEach((track) => {
-      remoteStream.addTrack(track);
-    });
-  };
 
   webcamVideo.srcObject = localStream;
   remoteVideo.srcObject = remoteStream;
@@ -111,7 +105,7 @@ callButton.onclick = async () => {
   pc.onicecandidate = (event) => {
     event.candidate && offerCandidates.add(event.candidate.toJSON());
   };
-  
+
   // Create offer
   const offerDescription = await pc.createOffer();
   await pc.setLocalDescription(offerDescription);

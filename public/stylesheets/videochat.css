@@ -11,6 +11,7 @@ body {
 }
 
 .videos{
+  filter: brightness(0.8);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(33vw, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(10vh, 1fr));
@@ -37,7 +38,39 @@ body {
   cursor: pointer; /* Mouse pointer on hover */
 }
 
+.closebuttons{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.closebtn{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: white; /* Blue background */
+  border: none; /* Remove borders */
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  color: #2E294E; /* White text */
+  font-size: 2rem; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.closebtn img{
+  width: 2.5rem;
+}
+
+.closebtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.closebtn::focus{
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
 .buttons{
+  filter: brightness(0.8);
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -50,11 +83,11 @@ body {
   margin: auto;
   justify-content: space-around;
   outline: 1px solid #2E294E;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .btn img{
-  width: 2rem;
+  width: 2.2rem;
 }
 
 .btn:hover {
@@ -63,4 +96,62 @@ body {
 
 .btn::focus{
   background-color: rgba(0, 0, 0, 0.25);
+}
+
+.hero{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem 4rem 2rem;
+  background-color: white;
+  color: #2E294E;
+  margin: auto;
+  width: 35%;
+  height: 40%;
+}
+
+.inputbox{
+  border-style: none;
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  margin-right: 1rem;
+  text-align: center;
+  background-color: #F9AF9A;
+}
+
+.joincallfield{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2E294E;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #2E294E;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #2E294E;
+}
+
+h1{
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 5rem;
+}
+
+h2{
+  font-size: 2rem;
+  font-weight: 600;
 }

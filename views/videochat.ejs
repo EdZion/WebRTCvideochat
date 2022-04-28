@@ -14,17 +14,35 @@
 </head>
 <body>
   <main>
-    <div class="videos">
+    <div class="videos" id="videos">
         <video class="video" id="webcamVideo" autoplay playsinline muted></video>
         <video class="video" id="remoteVideo" autoplay playsinline></video>
+        <video class="video" id="remoteVideo2" autoplay playsinline style="display: none;"></video>
     </div>
-    <div class="buttons">
-      <button id="" class="btn"><img src="/images/microphone.svg" alt="microphone"></button>
+    <div class="buttons" id="buttons">
+      <button id="webcamButton" class="btn"><img src="/images/microphone.svg" alt="microphone"></button>
       <button id="" class="btn"><img src="/images/Speaker.svg" alt="bell"></button>
-      <button id="" class="btn"><img src="/images/camdisabled.svg" alt="camdisabled"></button>
+      <button id="startwebcamButton" class="btn"><img src="/images/camdisabled.svg" alt="camdisabled"></button>
       <button id="hangupButton" class="btn"><img src="/images/Hangup.svg" alt="Hangup"></button>
-      <button id="" class="btn"><img src="/images/Arrowup.svg" alt="arrowup"></button>
+      <button id="popup" class="btn"><img src="/images/Arrowup.svg" alt="arrowup"></button>
+    </div>
+
+    <div class="hero" id="hero">
+      <div class="closebuttons">
+        <button id="close" class="closebtn"><img src="/images/Cross.svg" alt="cross"></button>
+      </div>
+      <header>
+        <h1>Sportswik</h1>
+      </header>
+      <h2>Make a call or join a call</h2>
+      <div class="joincallfield">
+        <input id="callInput" class="inputbox" placeholder="Type call ID"/>
+        <button id="answerButton" class="btn"><img src="/images/Answear.svg" alt="Answear">Join call</button>
+      </div>
+      <button id="callButton" class="btn"><img src="/images/Plus.svg" alt="Answear">Create new call</button>
     </div>
   </main>
+  <script type="module" src="/javascripts/bundle.js"></script>
+  <script type="module" src="/javascripts/script.js"></script>
 </body>
 </html>
