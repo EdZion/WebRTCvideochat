@@ -4,7 +4,7 @@ const videosBox = document.getElementById('videos');
 const buttonsBox = document.getElementById('buttons');
 const closeButton = document.getElementById('close');
 
-popupButton.onclick = async () => {
+popupButton.onclick = () => {
   if (heroBox.style.display === "none") {
     heroBox.style.display = "flex";
     videosBox.style.filter = "brightness(0.8)";
@@ -16,7 +16,7 @@ popupButton.onclick = async () => {
   }
 }
 
-closeButton.onclick = async () => {
+closeButton.onclick = () => {
   heroBox.style.display = "none";
   videosBox.style.filter = "none"
   buttonsBox.style.filter = "none"

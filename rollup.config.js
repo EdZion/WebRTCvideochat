@@ -2,7 +2,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export default {
   // the entry point file described above
-  input: 'src/index.js',
+  input: 'src/newindex.js',
   // the output for the build folder described above
   output: {
     file: 'public/javascripts/bundle.js',

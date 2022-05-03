@@ -57,7 +57,7 @@ body {
   cursor: pointer; /* Mouse pointer on hover */
 }
 
-.closebtn img{
+.closebtn > img{
   width: 2.5rem;
 }
 
@@ -86,8 +86,12 @@ body {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.btn img{
+.btn > img{
   width: 2.2rem;
+}
+
+.btn-call > img{
+  margin-left: 0.5rem;
 }
 
 .btn:hover {
