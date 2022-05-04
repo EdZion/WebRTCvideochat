@@ -16,6 +16,9 @@ popupButton.onclick = () => {
   }
 }
 
+
+
+
 closeButton.onclick = () => {
   heroBox.style.display = "none";
   videosBox.style.filter = "none"

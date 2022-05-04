@@ -39,6 +39,10 @@ const callInput = document.getElementById('callInput');
 const answerButton = document.getElementById('answerButton');
 const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
+const muteButton = document.getElementById('muteButton');
+
+
+
 
 // 1. Setup media sources
 callButton.onclick = async () => {
@@ -108,6 +112,9 @@ callButton.onclick = async () => {
   });
 };
 
+
+
+
 // 3. Answer the call with the unique ID
 answerButton.onclick = async () => {
   localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
@@ -161,6 +168,19 @@ answerButton.onclick = async () => {
     });
   });
 };
+
+
+
+
+muteButton.onclick = async () =>{
+  let localAudio = localStream.getAudioTracks()[0];
+  pc.removeTrack(localAudio);
+  localStream.getAudioTracks()[0].enabled = !(localStream.getAudioTracks()[0].enabled);
+  pc.addTrack(localAudio, localStream);
+}
+
+
+
 
 hangupButton.onclick = async () =>{
   pc.removeStream(localStream);
