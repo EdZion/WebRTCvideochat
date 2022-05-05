@@ -41,6 +41,7 @@ const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
 const muteButton = document.getElementById('muteButton');
 const soundButton = document.getElementById('soundButton');
+const webcamButton = document.getElementById('webcamButton');
 
 
 
@@ -186,6 +187,15 @@ soundButton.onclick = async () => {
   let remoteAudio = remoteStream.getTracks()[0];
   console.log(remoteAudio);
   remoteAudio.enabled = !(remoteAudio.enabled);
+}
+
+
+
+
+webcamButton.onclick = async () => {
+  let localVideo = localStream.getTracks()[1];
+  console.log(localVideo);
+  localVideo.enabled = !(localVideo.enabled);
 }
 
 
