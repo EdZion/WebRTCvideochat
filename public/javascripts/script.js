@@ -22,6 +22,6 @@ popupButton.onclick = () => {
 
 closeButton.onclick = () => {
   heroBox.style.display = "none";
-  videosBox.style.filter = "none"
-  buttonsBox.style.filter = "none"
+  videosBox.style.filter = "none";
+  buttonsBox.style.filter = "none";
 }

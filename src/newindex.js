@@ -47,6 +47,10 @@ const camImage = document.getElementById('camImage');
 const muteImage = document.getElementById('muteImage');
 const soundImage = document.getElementById('soundImage');
 
+const heroBox = document.getElementById('hero');
+const videosBox = document.getElementById('videos');
+const buttonsBox = document.getElementById('buttons');
+
 
 
 
@@ -140,6 +144,10 @@ answerButton.onclick = async () => {
 
   webcamVideo.srcObject = localStream;
   remoteVideo.srcObject = remoteStream;
+
+  heroBox.style.display = "none";
+  videosBox.style.filter = "none";
+  buttonsBox.style.filter = "none";
 
   const callId = callInput.value;
   const callDoc = firestore.collection('calls').doc(callId);
