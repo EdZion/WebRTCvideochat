@@ -176,7 +176,7 @@ answerButton.onclick = async () => {
 muteButton.onclick = async () => {
   let localAudio = localStream.getTracks()[0];
   console.log(localAudio);
-  pc.removeTrack(localAudio, localStream);
+  localAudio.enabled = !(localAudio.enabled);
 }
 
 
