@@ -40,6 +40,8 @@ const answerButton = document.getElementById('answerButton');
 const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
 const muteButton = document.getElementById('muteButton');
+const soundButton = document.getElementById('soundButton');
+const webcamButton = document.getElementById('webcamButton');
 
 
 
@@ -172,17 +174,34 @@ answerButton.onclick = async () => {
 
 
 
-muteButton.onclick = async () =>{
-  let localAudio = localStream.getAudioTracks()[0];
-  pc.removeTrack(localAudio);
-  localStream.getAudioTracks()[0].enabled = !(localStream.getAudioTracks()[0].enabled);
-  pc.addTrack(localAudio, localStream);
+muteButton.onclick = async () => {
+  let localAudio = localStream.getTracks()[0];
+  console.log(localAudio);
+  localAudio.enabled = !(localAudio.enabled);
 }
 
 
 
 
-hangupButton.onclick = async () =>{
+soundButton.onclick = async () => {
+  let remoteAudio = remoteStream.getTracks()[0];
+  console.log(remoteAudio);
+  remoteAudio.enabled = !(remoteAudio.enabled);
+}
+
+
+
+
+webcamButton.onclick = async () => {
+  let localVideo = localStream.getTracks()[1];
+  console.log(localVideo);
+  localVideo.enabled = !(localVideo.enabled);
+}
+
+
+
+
+hangupButton.onclick = async () => {
   pc.removeStream(localStream);
   pc.removeStream(remoteStream);
   pc.close();
