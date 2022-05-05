@@ -43,6 +43,10 @@ const muteButton = document.getElementById('muteButton');
 const soundButton = document.getElementById('soundButton');
 const webcamButton = document.getElementById('webcamButton');
 
+const camImage = document.getElementById('camImage');
+const muteImage = document.getElementById('muteImage');
+const soundImage = document.getElementById('soundImage');
+
 
 
 
@@ -178,6 +182,12 @@ muteButton.onclick = async () => {
   let localAudio = localStream.getTracks()[0];
   console.log(localAudio);
   localAudio.enabled = !(localAudio.enabled);
+
+  if(muteImage.src.match("/images/microphone.svg")){
+    muteImage.src = "/images/microphonedisabled.svg";
+  }else{
+    muteImage.src = "/images/microphone.svg";
+  }
 }
 
 
@@ -187,6 +197,12 @@ soundButton.onclick = async () => {
   let remoteAudio = remoteStream.getTracks()[0];
   console.log(remoteAudio);
   remoteAudio.enabled = !(remoteAudio.enabled);
+
+  if(soundImage.src.match("/images/Speaker.svg")){
+    soundImage.src = "/images/Speakeroff.svg";
+  }else{
+    soundImage.src = "/images/Speaker.svg";
+  }
 }
 
 
@@ -196,6 +212,12 @@ webcamButton.onclick = async () => {
   let localVideo = localStream.getTracks()[1];
   console.log(localVideo);
   localVideo.enabled = !(localVideo.enabled);
+
+  if(camImage.src.match("/images/cam.svg")){
+    camImage.src = "/images/camdisabled.svg";
+  }else{
+    camImage.src = "/images/cam.svg";
+  }
 }
 
 
